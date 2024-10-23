@@ -1,6 +1,6 @@
 import React from 'react';
 import { Person } from '../../types';
-import { PersonLink } from '../../pages/PersonLink';
+import { PersonLink } from '../PersonLink';
 import cn from 'classnames';
 
 interface Props {
