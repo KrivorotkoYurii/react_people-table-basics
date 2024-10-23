@@ -6,7 +6,7 @@ const getLinkClass = ({ isActive }: { isActive: boolean }) =>
   cn('navbar-item', { 'has-background-grey-lighter': isActive });
 
 export const App = () => (
-  <html className="has-navbar-fixed-top">
+  <div className="has-navbar-fixed-top">
     <div data-cy="app">
       <nav
         data-cy="nav"
@@ -33,5 +33,5 @@ export const App = () => (
         </div>
       </main>
     </div>
-  </html>
+  </div>
 );

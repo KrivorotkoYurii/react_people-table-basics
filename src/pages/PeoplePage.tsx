@@ -11,7 +11,7 @@ import { NoPeopleMessage } from '../components/NoPeopleMessage';
 export const PeoplePage: React.FC = () => {
   const [people, setPeople] = useState<Person[]>([]);
   const [loading, setLoading] = useState(false);
-  const [errorMassage, seterrorMassage] = useState(false);
+  const [errorMessage, setErrorMassage] = useState(false);
 
   const { slug } = useParams();
 
@@ -41,7 +41,7 @@ export const PeoplePage: React.FC = () => {
     setLoading(true);
     getPeople()
       .then(setPeople)
-      .catch(() => seterrorMassage(true))
+      .catch(() => setErrorMassage(true))
       .finally(() => {
         setPeople(current => getPeopleWithChildren(current));
         setLoading(false);
@@ -55,7 +55,7 @@ export const PeoplePage: React.FC = () => {
         <div className="box table-container">
           {loading && <Loader />}
 
-          {errorMassage && <ErrorMessage />}
+          {errorMessage && <ErrorMessage />}
 
           {canShowNoPeopleMessage && <NoPeopleMessage />}
 
